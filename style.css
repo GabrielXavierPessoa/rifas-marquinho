@@ -1,0 +1,342 @@
+/* ==========================================================================
+   1. VARIÁVEIS DE CORES E CONFIGURAÇÕES BASE
+   ========================================================================== */
+:root {
+  --bg-dark-green: #1b3322;
+  --bg-light-earth: #f4f6f4;
+  --accent-orange: #e67e22;
+  --accent-gold: #f1c40f;
+  --text-main: #2c3e50;
+  --bg-card: #ffffff;
+  
+  --color-available: #2ecc71;
+  --color-selected: #3498db;
+  --color-reserved: #f39c12;
+  --color-paid: #e74c3c;
+  
+  --font-base: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-base);
+  background-color: var(--bg-light-earth);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 800px;
+  margin: -2rem auto 3rem auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 10;
+}
+
+/* ==========================================================================
+   2. CABEÇALHO HERO
+   ========================================================================== */
+.hero-header {
+  background: linear-gradient(135deg, #112216 0%, var(--bg-dark-green) 100%);
+  color: #ffffff;
+  text-align: center;
+  padding: 4rem 1rem 6rem 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.badge-live {
+  background-color: var(--accent-orange);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(230, 126, 34, 0.4);
+}
+
+.main-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.main-subtitle {
+  color: #a2bfa6;
+  font-size: 1.1rem;
+}
+
+/* ==========================================================================
+   3. CARD DO PRÊMIO & CARROSSEL
+   ========================================================================== */
+.prize-card {
+  background-color: var(--bg-card);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 10px 25px rgba(27, 51, 34, 0.08);
+  margin-bottom: 2.5rem;
+}
+
+.prize-tag {
+  background-color: #fef5ec;
+  color: var(--accent-orange);
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+}
+
+.prize-title {
+  font-size: 1.8rem;
+  color: var(--bg-dark-green);
+  margin-bottom: 1.5rem;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background-color: #eaeaea;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.carousel-slides {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.carousel-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-slide.active { opacity: 1; }
+.carousel-slide img { width: 100%; height: 100%; object-fit: cover; }
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 1rem 0.75rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 15;
+}
+.next-btn { right: 0; border-radius: 4px 0 0 4px; }
+.prev-btn { left: 0; border-radius: 0 4px 4px 0; }
+.carousel-btn:hover { background-color: rgba(0, 0, 0, 0.8); }
+
+.prize-details {
+  list-style: none;
+  background-color: #fafbfa;
+  padding: 1.25rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--bg-dark-green);
+  margin-bottom: 1.5rem;
+}
+
+.prize-details li { margin-bottom: 0.5rem; font-size: 1.05rem; }
+
+.prize-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.info-item {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.info-label {
+  display: block;
+  font-size: 0.85rem;
+  color: #7f8c8d;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.info-value { font-size: 1.4rem; font-weight: 800; color: var(--bg-dark-green); }
+
+/* ==========================================================================
+   4. GRID DE NÚMEROS E FORMULÁRIO (NOVO VISUAL)
+   ========================================================================== */
+.numbers-section {
+  background-color: var(--bg-card);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 10px 25px rgba(27, 51, 34, 0.05);
+  margin-bottom: 2.5rem;
+}
+
+.section-title { font-size: 1.4rem; color: var(--bg-dark-green); text-align: center; margin-bottom: 0.5rem; }
+.section-subtitle { font-size: 0.95rem; color: #7f8c8d; text-align: center; margin-bottom: 2rem; }
+
+.numbers-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.number-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 55px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+  color: #ffffff;
+  transition: transform 0.1s;
+}
+
+.number-btn:active { transform: scale(0.95); }
+.number-btn[data-status="available"] { background-color: var(--color-available); }
+.number-btn[data-status="reserved"] { background-color: var(--color-reserved); cursor: not-allowed; }
+.number-btn[data-status="paid"] { background-color: var(--color-paid); cursor: not-allowed; opacity: 0.5; }
+
+.number-btn.selected {
+  background-color: var(--color-selected) !important;
+  box-shadow: 0 0 0 4px #ffffff, 0 0 0 7px var(--color-selected);
+}
+
+.legend-container {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  border-bottom: 1px solid #eaeded;
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.legend-item { display: flex; align-items: center; font-size: 0.9rem; font-weight: 600; }
+.bullet { width: 14px; height: 14px; border-radius: 4px; margin-right: 0.5rem; }
+.bullet.available { background-color: var(--color-available); }
+.bullet.selected { background-color: var(--color-selected); }
+.bullet.reserved { background-color: var(--color-reserved); }
+.bullet.paid { background-color: var(--color-paid); }
+
+/* Estilização Nova do Formulário */
+.user-form {
+  background-color: #fcfdfc;
+  border: 1px solid #e2ece5;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.form-title {
+  font-size: 1.1rem;
+  color: var(--bg-dark-green);
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #e2ece5;
+  padding-bottom: 0.25rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.input-group:last-child { margin-bottom: 0; }
+
+.input-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #555;
+}
+
+.input-group input {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input-group input:focus {
+  border-color: var(--bg-dark-green);
+  box-shadow: 0 0 0 3px rgba(27, 51, 34, 0.1);
+}
+
+/* Caixa de Checkout Reestruturada */
+.checkout-box {
+  background-color: #f8fdf9;
+  border: 1px solid #d4efdf;
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.checkout-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+}
+
+.checkout-row.highlight {
+  font-size: 1.2rem;
+  border-top: 1px dashed #d4efdf;
+  padding-top: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.checkout-row.highlight strong { color: var(--color-available); font-weight: 800; }
+
+.btn-whatsapp {
+  display: block;
+  width: 100%;
+  background-color: #25d366;
+  color: #ffffff;
+  border: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25);
+  transition: all 0.2s ease;
+}
+
+.btn-whatsapp:hover:not(:disabled) { background-color: #1ebd56; transform: translateY(-2px); }
+.btn-whatsapp:disabled { background-color: #bdc3c7; color: #7f8c8d; cursor: not-allowed; box-shadow: none; }
+
+/* ==========================================================================
+   5. REGRAS E RODAPÉ
+   ========================================================================== */
+.rules-section { background-color: var(--bg-card); border-radius: 16px; padding: 2rem; box-shadow: 0 10px 25px rgba(27, 51, 34, 0.05); }
+.rules-list { margin-left: 1.25rem; color: #34495e; }
+.rules-list li { margin-bottom: 0.75rem; }
+
+.site-footer { background-color: var(--bg-dark-green); color: #a2bfa6; text-align: center; padding: 2.5rem 1rem; font-size: 0.85rem; margin-top: 4rem; }
+.site-footer p:first-child { margin-bottom: 0.5rem; color: #ffffff; font-size: 0.95rem; }

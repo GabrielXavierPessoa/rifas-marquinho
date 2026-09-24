@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rifas Marquinho - Tralha de Pesca Tupã</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Cabeçalho Principal -->
+    <header class="hero-header">
+      <div class="header-container">
+        <span class="badge-live">2️⃣ RIFA 2 - APENAS R$ 20,00 POR NÚMERO</span>
+        <h1 class="main-title">Marquinhos Tralha de Pesca Tupã</h1>
+        <p class="main-subtitle">Organizador: João Vitor da Costa Vidoti</p>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- Seção do Prêmio Principal -->
+      <section class="prize-section">
+        <div class="prize-card">
+          <div class="prize-tag">🏆 Prêmio Único - Sorteio de 1 Ganhador</div>
+          <h2 class="prize-title">Kit Profissional de Pesca Premium</h2>
+          
+          <!-- Carrossel de Imagens -->
+          <div class="carousel-container">
+            <div class="carousel-slides">
+              <div class="carousel-slide active">
+                <img src="/images/kit-pesca-1.jpg" alt="Kit de Pesca Completo" />
+              </div>
+              <div class="carousel-slide">
+                <img src="/images/vara-lumis.jpg" alt="Vara Lumis Kraton" />
+              </div>
+              <div class="carousel-slide">
+                <img src="/images/carretilha.jpg" alt="Carretilha Super CW" />
+              </div>
+            </div>
+            <button class="carousel-btn prev-btn" id="prevSlide">❮</button>
+            <button class="carousel-btn next-btn" id="nextSlide">❯</button>
+          </div>
+
+          <!-- Lista das especificações do prêmio -->
+          <ul class="prize-details">
+            <li><strong>Vara:</strong> Lumis Kraton 1,65m</li>
+            <li><strong>Carretilha:</strong> Super CW</li>
+            <li><strong>Linha:</strong> Lumis Multifilamento Multicolor 0,19mm / 150 Metros</li>
+          </ul>
+
+          <!-- Informações de Valor e Pagamento -->
+          <div class="prize-info-grid">
+            <div class="info-item">
+              <span class="info-label">Valor por Número</span>
+              <span class="info-value">R$ 20,00</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Chave PIX (Celular)</span>
+              <span class="info-value" style="font-size: 1.15rem; word-break: break-all;">14996508279</span>
+              <span class="info-label" style="margin-top: 5px; font-size: 0.75rem;">João Vitor C. Vidoti - Nubank</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Seção do Quadro de Números e Formulário -->
+      <section class="numbers-section">
+        <h2 class="section-title">Escolha o seu Número da Sorte</h2>
+        <p class="section-subtitle">Selecione os números disponíveis, preencha seus dados abaixo e envie o pedido.</p>
+        
+        <!-- Grid com os 25 números Atualizados conforme sua lista -->
+        <div class="numbers-grid" id="rifaGrid">
+          <button class="number-btn" data-number="01" data-status="available">01 🦢</button>
+          <button class="number-btn" data-number="02" data-status="available">02 🦅</button>
+          <button class="number-btn" data-number="03" data-status="paid">03 🐴</button> <!-- Maurício -->
+          <button class="number-btn" data-number="04" data-status="paid">04 🦋</button> <!-- Diego Papilli -->
+          <button class="number-btn" data-number="05" data-status="available">05 🐩</button>
+          <button class="number-btn" data-number="06" data-status="available">06 🐐</button>
+          <button class="number-btn" data-number="07" data-status="paid">07 🐑</button> <!-- Luís Carlos -->
+          <button class="number-btn" data-number="08" data-status="paid">08 🐫</button> <!-- Maurício -->
+          <button class="number-btn" data-number="09" data-status="available">09 🐍</button>
+          <button class="number-btn" data-number="10" data-status="available">10 🐰</button>
+          <button class="number-btn" data-number="11" data-status="paid">11 🐎</button> <!-- Tiago -->
+          <button class="number-btn" data-number="12" data-status="available">12 🐘</button>
+          <button class="number-btn" data-number="13" data-status="available">13 🐔</button>
+          <button class="number-btn" data-number="14" data-status="available">14 🐈</button>
+          <button class="number-btn" data-number="15" data-status="paid">15 🐊</button> <!-- Luzeta -->
+          <button class="number-btn" data-number="16" data-status="available">16 🦁</button>
+          <button class="number-btn" data-number="17" data-status="paid">17 🐒</button> <!-- Juninho -->
+          <button class="number-btn" data-number="18" data-status="available">18 🐷</button>
+          <button class="number-btn" data-number="19" data-status="paid">19 🦚</button> <!-- Tiago -->
+          <button class="number-btn" data-number="20" data-status="paid">20 🦃</button> <!-- Diego Papilli -->
+          <button class="number-btn" data-number="21" data-status="paid">21 🐃</button> <!-- Luzeta -->
+          <button class="number-btn" data-number="22" data-status="available">22 🐯</button>
+          <button class="number-btn" data-number="23" data-status="paid">23 🐻</button> <!-- Anderson Dias -->
+          <button class="number-btn" data-number="24" data-status="available">24 🦌</button>
+          <button class="number-btn" data-number="25" data-status="available">25 🐮</button>
+        </div>
+
+        <!-- Legenda explicativa -->
+        <div class="legend-container">
+          <div class="legend-item"><span class="bullet available"></span> Disponível</div>
+          <div class="legend-item"><span class="bullet selected"></span> Selecionado</div>
+          <div class="legend-item"><span class="bullet paid"></span> Ocupado / Pago</div>
+        </div>
+
+        <!-- Formulário de Dados do Comprador -->
+        <div class="user-form">
+          <h3 class="form-title">Seus Dados de Contato</h3>
+          <div class="input-group">
+            <label for="userName">Nome Completo:</label>
+            <input type="text" id="userName" placeholder="Ex: Lucas Souza" required />
+          </div>
+          <div class="input-group">
+            <label for="userPhone">WhatsApp de Contato:</label>
+            <input type="tel" id="userPhone" placeholder="Ex: (14) 99999-9999" required />
+          </div>
+        </div>
+
+        <!-- Painel de Checkout Dinâmico -->
+        <div class="checkout-box" id="checkoutBox">
+          <div class="checkout-row">
+            <span>Números Escolhidos:</span>
+            <strong id="selectedNumbersText">Nenhum</strong>
+          </div>
+          <div class="checkout-row highlight">
+            <span>Valor Total:</span>
+            <strong id="totalPriceText">R$ 0,00</strong>
+          </div>
+          <button id="btnEnviarWhatsapp" class="btn-whatsapp" disabled>
+            💬 Enviar Pedido para o WhatsApp
+          </button>
+        </div>
+      </section>
+
+      <!-- Instruções -->
+      <section class="rules-section">
+        <h2 class="section-title">Regras e Avisos Importantes</h2>
+        <ol class="rules-list">
+          <li>Selecione na tabela acima os números que deseja comprar (apenas os verdes estão livres).</li>
+          <li>Preencha seu Nome e WhatsApp de contato.</li>
+          <li>Clique no botão verde para enviar o pedido diretamente no WhatsApp do Marquinho.</li>
+          <li>⚠️ <strong>Importante:</strong> Após realizar o PIX, envie o comprovante no grupo com o seu nome para confirmar sua tralha!</li>
+        </ol>
+      </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="site-footer">
+      <p>© 2026 Marquinhos Tralha de Pesca Tupã. Todos os direitos reservados.</p>
+      <p>Organizador: João Vitor da Costa Vidoti | Banco: Nubank</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
